@@ -1,10 +1,10 @@
 // Añadimos el mongoose a nuestro archivo cargo la dependencia para conectar el back con la base de datos
 const mongoose = require("mongoose");
 
-// Establesco la conexion
+// Establecer la conexion
 const host = "localhost";
 const port = "27017";
-const db = "hr";
+const db = "art";
 
 
 exports.mongoConnect = () => {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose"); //Aqui le estoy diciendo qu lo que voy a trabajar ahorita requiere mongoose
-
 const Schema = mongoose.Schema; //Le digo que voy a requerir un espacio a partir de mongoose y que voy a requerir un esquema
-const EmpleadosSchema = new Schema({
+
+const ArtistasSchema = new Schema({
     nombre:{type: String, requiered: true, max:60},
     apellido_p:{type: String, requiered: true, max:40},
     apellido_m:{type: String, requiered: true, max:40},
@@ -10,4 +10,4 @@ const EmpleadosSchema = new Schema({
     direccion:{type: String, requiered: false, max:150}    
 });
 
-module.exports = mongoose.model("empleados", EmpleadosSchema);
+module.exports = mongoose.model("artistas", ArtistasSchema);

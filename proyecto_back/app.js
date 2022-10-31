@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var database = require('./config/database');
+var auth = require("./auth/main_auth");
 
 var artistasRouter = require('./routes/artistas.router');
 var obrasRouter = require('./routes/obras.router');
+var usuariosRouter = require('./routes/usuarios.router');
 
 var app = express();
 
@@ -18,6 +20,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongo connection Establecemos la conexion con moongo
 database.mongoConnect();
+  //login
+app.use('/usuarios', usuariosRouter);
+  //proceso de autenticación
+app.use(auth);
 
 // Router 
 app.use('/artistas',artistasRouter);

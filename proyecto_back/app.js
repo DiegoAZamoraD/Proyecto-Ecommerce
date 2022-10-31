@@ -5,8 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var database = require('./config/database');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var artistasRouter = require('./routes/artistas.router');
 var obrasRouter = require('./routes/obras.router');
 
@@ -22,8 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 database.mongoConnect();
 
 // Router 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/artistas',artistasRouter);
 app.use('/obras',obrasRouter);
 
